@@ -250,3 +250,8 @@ elif page == "💡 Dự đoán":
         model = joblib.load('models/best_model.pkl')
         scaler = joblib.load('models/scaler.pkl')
         label_encoders = joblib.load('models/label_encoders.pkl')
+        feature_names = joblib.load('models/feature_names.pkl')
+        st.success("✅ Cổng kết nối dữ liệu dự báo đã sẵn sàng hoạt động!")
+    except Exception as e:
+        st.error("❌ Hệ thống chưa tìm thấy tệp mô hình được lưu! Vui lòng quay lại tab 'Xây dựng mô hình' để thực hiện huấn luyện và lưu.")
+        st.stop()
